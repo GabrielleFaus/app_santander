@@ -1,3 +1,4 @@
+import 'package:app_santander/views/cadastro_conta.dart';
 import 'package:app_santander/views/dashboard.dart';
 import 'package:flutter/material.dart';
 
@@ -9,18 +10,18 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
-
-  bool vrswitchCpf = false;
-  bool vrswitchSenha = false;
+  bool vrSwitchCpf = false;
+  bool vrSwitchSenha = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: (){
-          Navigator.of(context).pop();
-          },icon: Icon(Icons.arrow_back_ios)),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(Icons.arrow_back_ios)),
         backgroundColor: Color.fromARGB(255, 236, 9, 0),
         iconTheme: IconThemeData(color: Colors.white),
         title: Image.asset(
@@ -64,15 +65,14 @@ class _LoginState extends State<Login> {
                     color: Colors.grey,
                   ),
                 ),
-                //switch lembrar meu cpf
-                Switch(value: vrswitchCpf, onChanged: (value) {
-                 setState(() {
-                    vrswitchCpf = value;
-                 });
-                },
-                activeTrackColor: Colors.red,
-                inactiveThumbColor: Colors.grey,
-                inactiveTrackColor: Colors.black26)
+                //switch lembrar meu CPF
+                Switch(
+                    value: vrSwitchCpf,
+                    onChanged: (value) {
+                      setState(() {
+                        vrSwitchCpf = value;
+                      });
+                    })
               ],
             ),
             TextField(
@@ -89,15 +89,15 @@ class _LoginState extends State<Login> {
                     color: Colors.grey,
                   ),
                 ),
-                //switch lembrar minha senha
-                Switch(value: vrswitchSenha, onChanged: (value) {
-                  setState(() {
-                    vrswitchSenha = value;
-                  });
-                },
-                activeTrackColor: Colors.red,
-                inactiveThumbColor: Colors.grey,
-                inactiveTrackColor: Colors.black26),
+
+                // switch lembrar minha senha
+                Switch(
+                    value: vrSwitchSenha,
+                    onChanged: (value) {
+                      setState(() {
+                        vrSwitchSenha = value;
+                      });
+                    })
               ],
             ),
             SizedBox(
@@ -110,14 +110,33 @@ class _LoginState extends State<Login> {
                 decoration: TextDecoration.underline,
               ),
             ),
+            SizedBox(
+              height: 15,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => CadastroConta(),
+                  ),
+                );
+              },
+              child: Text(
+                "Criar uma conta agora",
+                style: TextStyle(
+                  color: Colors.red,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
             Expanded(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (ctx) => Dashboard()));
+                        .push(MaterialPageRoute(builder: (ctx) => Dashboard()));
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -129,10 +148,7 @@ class _LoginState extends State<Login> {
                     ),
                     child: Text(
                       "Entrar",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16
-                      ),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
                 )
