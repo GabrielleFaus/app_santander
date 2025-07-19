@@ -1,3 +1,5 @@
+import 'package:app_santander/views/definirTransferencia.dart';
+import 'package:app_santander/views/definir_Transferencia.dart';
 import 'package:flutter/material.dart';
 
 class Pix1 extends StatefulWidget {
@@ -66,7 +68,11 @@ class _Pix1State extends State<Pix1> {
             Text("Celular, CPF/CNPJ, e-mail, chave aleatória..."),
             controllerPix.text.isNotEmpty
                 ? GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: context) => DefinirTransferencia(),
+                    );
+                  },
                   child: Container(
                     margin: EdgeInsets.only(top: 18),
                     alignment: Alignment.center,
