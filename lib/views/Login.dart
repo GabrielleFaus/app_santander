@@ -18,23 +18,19 @@ class _LoginState extends State<Login> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: Icon(Icons.arrow_back_ios)),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+        ),
         backgroundColor: Color.fromARGB(255, 236, 9, 0),
         iconTheme: IconThemeData(color: Colors.white),
-        title: Image.asset(
-          "santander_nome_login2.png",
-          height: 60,
-        ),
+        title: Image.asset("santander_nome_login2.png", height: 60),
         centerTitle: true,
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.place_outlined,
-            ),
+            child: Icon(Icons.place_outlined),
           ),
         ],
       ),
@@ -47,62 +43,47 @@ class _LoginState extends State<Login> {
               "Acessar sua conta",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
-            SizedBox(
-              height: 15,
-            ),
+            SizedBox(height: 15),
             TextField(
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                label: Text("CPF"),
-              ),
+              decoration: InputDecoration(label: Text("CPF")),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "Lembrar meu CPF",
-                  style: TextStyle(
-                    color: Colors.grey,
-                  ),
-                ),
+                Text("Lembrar meu CPF", style: TextStyle(color: Colors.grey)),
                 //switch lembrar meu CPF
                 Switch(
-                    value: vrSwitchCpf,
-                    onChanged: (value) {
-                      setState(() {
-                        vrSwitchCpf = value;
-                      });
-                    })
+                  value: vrSwitchCpf,
+                  onChanged: (value) {
+                    setState(() {
+                      vrSwitchCpf = value;
+                    });
+                  },
+                ),
               ],
             ),
-            TextField(
-              decoration: InputDecoration(
-                label: Text("Senha"),
-              ),
-            ),
+            TextField(decoration: InputDecoration(label: Text("Senha"))),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   "Lembrar minha senha",
-                  style: TextStyle(
-                    color: Colors.grey,
-                  ),
+                  style: TextStyle(color: Colors.grey),
                 ),
 
                 // switch lembrar minha senha
                 Switch(
-                    value: vrSwitchSenha,
-                    onChanged: (value) {
-                      setState(() {
-                        vrSwitchSenha = value;
-                      });
-                    })
+                  value: vrSwitchSenha,
+                  onChanged: (value) {
+                    setState(() {
+                      vrSwitchSenha = value;
+                    });
+                  },
+                ),
               ],
             ),
-            SizedBox(
-              height: 15,
-            ),
+            SizedBox(height: 15),
             Text(
               "Esqueci minha senha",
               style: TextStyle(
@@ -110,15 +91,11 @@ class _LoginState extends State<Login> {
                 decoration: TextDecoration.underline,
               ),
             ),
-            SizedBox(
-              height: 15,
-            ),
+            SizedBox(height: 15),
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => CadastroConta(),
-                  ),
+                  MaterialPageRoute(builder: (context) => CadastroConta()),
                 );
               },
               child: Text(
@@ -130,30 +107,32 @@ class _LoginState extends State<Login> {
               ),
             ),
             Expanded(
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (ctx) => Dashboard()));
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 40,
-                    width: double.maxFinite,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.red,
-                    ),
-                    child: Text(
-                      "Entrar",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(
+                        context,
+                      ).push(MaterialPageRoute(builder: (ctx) => Dashboard()));
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 40,
+                      width: double.maxFinite,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.red,
+                      ),
+                      child: Text(
+                        "Entrar",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
                     ),
                   ),
-                )
-              ],
-            ))
+                ],
+              ),
+            ),
           ],
         ),
       ),

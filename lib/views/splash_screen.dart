@@ -9,22 +9,21 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
-  Future.delayed(Duration(seconds: 3),(){
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => PreLogin()));
-  });
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.of(
+        context,
+      ).push(MaterialPageRoute(builder: (context) => PreLogin()));
+    });
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 236, 9, 0),
-      body: Center(
-        child: Image.asset("logo_santinha.png", width: 150,),
-      ),
+      body: Center(child: Image.asset("logo_santinha.png", width: 150)),
     );
   }
 }

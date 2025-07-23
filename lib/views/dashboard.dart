@@ -15,16 +15,12 @@ class _DashboardState extends State<Dashboard> {
   int _current = 0;
   final CarouselSliderController _controller = CarouselSliderController();
 
-  final List<String> stringList = [
-    '1',
-    '2',
-    '3',
-  ];
+  final List<String> stringList = ['1', '2', '3'];
 
   final List<dynamic> cardsTransf = [
     {"titulo": "Pix", "icon": Icons.pix, "route": Pix1()},
     {"titulo": "ID Santander", "icon": Icons.lock_open, "route": Pix1()},
-    {"titulo": "Pix", "icon": Icons.pix, "route": Pix1()}
+    {"titulo": "Pix", "icon": Icons.pix, "route": Pix1()},
   ];
 
   @override
@@ -35,9 +31,10 @@ class _DashboardState extends State<Dashboard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: cardAberto
-                  ? MediaQuery.of(context).size.height * 0.50
-                  : MediaQuery.of(context).size.height * 0.36,
+              height:
+                  cardAberto
+                      ? MediaQuery.of(context).size.height * 0.50
+                      : MediaQuery.of(context).size.height * 0.36,
               child: Stack(
                 children: [
                   Image.asset("fundo_dashboard.png"),
@@ -46,26 +43,17 @@ class _DashboardState extends State<Dashboard> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Image.asset(
-                          "teste3.png",
-                          width: 150,
-                        ),
+                        Image.asset("teste3.png", width: 150),
                         Row(
                           children: [
-                            Icon(
-                              Icons.search_outlined,
-                              color: Colors.white,
-                            ),
-                            Icon(
-                              Icons.message_outlined,
-                              color: Colors.white,
-                            ),
+                            Icon(Icons.search_outlined, color: Colors.white),
+                            Icon(Icons.message_outlined, color: Colors.white),
                             Icon(
                               Icons.notifications_outlined,
                               color: Colors.white,
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -117,14 +105,10 @@ class _DashboardState extends State<Dashboard> {
                                         color: Colors.red,
                                         size: 30,
                                       ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
+                                      SizedBox(width: 10),
                                       Text(
                                         "Saldo disponivel",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
+                                        style: TextStyle(fontSize: 16),
                                       ),
                                     ],
                                   ),
@@ -134,65 +118,66 @@ class _DashboardState extends State<Dashboard> {
                                         cardAberto = !cardAberto;
                                       });
                                     },
-                                    icon: cardAberto
-                                        ? Icon(
-                                            Icons.keyboard_arrow_up,
-                                            size: 30,
-                                          )
-                                        : Icon(
-                                            Icons.keyboard_arrow_down,
-                                            size: 30,
-                                          ),
-                                  )
+                                    icon:
+                                        cardAberto
+                                            ? Icon(
+                                              Icons.keyboard_arrow_up,
+                                              size: 30,
+                                            )
+                                            : Icon(
+                                              Icons.keyboard_arrow_down,
+                                              size: 30,
+                                            ),
+                                  ),
                                 ],
                               ),
                               cardAberto
                                   ? Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "R\$ 10.000.000,00",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20),
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "R\$ 10.000.000,00",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20,
                                         ),
-                                        Text(
-                                          "Saldo + Limite: 123,00",
-                                          style: TextStyle(fontSize: 16),
+                                      ),
+                                      Text(
+                                        "Saldo + Limite: 123,00",
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                      Text(
+                                        "Entenda seu limite",
+                                        style: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 16,
+                                          decoration: TextDecoration.underline,
                                         ),
-                                        Text(
-                                          "Entenda seu limite",
-                                          style: TextStyle(
-                                            color: Colors.red,
-                                            fontSize: 16,
-                                            decoration:
-                                                TextDecoration.underline,
-                                          ),
-                                        ),
-                                        Divider(),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              "Ver extrato",
-                                              style: TextStyle(
-                                                fontSize: 18,
-                                                color: Colors.red,
-                                              ),
+                                      ),
+                                      Divider(),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "Ver extrato",
+                                            style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.red,
                                             ),
-                                          ],
-                                        )
-                                      ],
-                                    )
-                                  : Container()
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  )
+                                  : Container(),
                             ],
                           ),
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -222,9 +207,7 @@ class _DashboardState extends State<Dashboard> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(cardsTransf[index]['icon']),
-                              SizedBox(
-                                height: 10,
-                              ),
+                              SizedBox(height: 10),
                               Text(cardsTransf[index]['titulo']),
                             ],
                           ),
@@ -248,7 +231,8 @@ class _DashboardState extends State<Dashboard> {
                         children: [
                           Text('Conta PJ + fácil'),
                           Text(
-                              'Conta MEI c/ 1 ano grátis em poucos\ncliques. Abra já'),
+                            'Conta MEI c/ 1 ano grátis em poucos\ncliques. Abra já',
+                          ),
                         ],
                       ),
                     ),
@@ -257,47 +241,54 @@ class _DashboardState extends State<Dashboard> {
                   ],
                   carouselController: _controller,
                   options: CarouselOptions(
-                      autoPlay: true,
-                      enlargeCenterPage: true,
-                      height: 80,
-                      onPageChanged: (index, reason) {
-                        setState(() {
-                          _current = index;
-                        });
-                      }),
+                    autoPlay: true,
+                    enlargeCenterPage: true,
+                    height: 80,
+                    onPageChanged: (index, reason) {
+                      setState(() {
+                        _current = index;
+                      });
+                    },
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: stringList.asMap().entries.map((entry) {
-                    return GestureDetector(
-                      onTap: () => _controller.animateToPage(entry.key),
-                      child: Container(
-                        width: 12.0,
-                        height: 12.0,
-                        margin: EdgeInsets.symmetric(
-                            vertical: 8.0, horizontal: 4.0),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color:
-                                (Theme.of(context).brightness == Brightness.dark
-                                        ? Colors.white
-                                        : Colors.black)
-                                    .withOpacity(
-                                        _current == entry.key ? 0.9 : 0.4)),
-                      ),
-                    );
-                  }).toList(),
+                  children:
+                      stringList.asMap().entries.map((entry) {
+                        return GestureDetector(
+                          onTap: () => _controller.animateToPage(entry.key),
+                          child: Container(
+                            width: 12.0,
+                            height: 12.0,
+                            margin: EdgeInsets.symmetric(
+                              vertical: 8.0,
+                              horizontal: 4.0,
+                            ),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: (Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? Colors.white
+                                      : Colors.black)
+                                  .withOpacity(
+                                    _current == entry.key ? 0.9 : 0.4,
+                                  ),
+                            ),
+                          ),
+                        );
+                      }).toList(),
                 ),
               ],
             ),
             Padding(
-              padding:
-                  const EdgeInsets.only(left: 12.0, top: 12.0, bottom: 12.0),
+              padding: const EdgeInsets.only(
+                left: 12.0,
+                top: 12.0,
+                bottom: 12.0,
+              ),
               child: Text(
                 "Cartões",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
@@ -315,16 +306,11 @@ class _DashboardState extends State<Dashboard> {
                         children: [
                           Row(
                             children: [
-                              Icon(
-                                Icons.credit_card,
-                                color: Colors.white,
-                              ),
+                              Icon(Icons.credit_card, color: Colors.white),
                               SizedBox(width: 12),
                               Text(
                                 "Cartão final",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
+                                style: TextStyle(color: Colors.white),
                               ),
                               SizedBox(width: 5),
                               Text(
@@ -336,26 +322,19 @@ class _DashboardState extends State<Dashboard> {
                               ),
                             ],
                           ),
-                          Icon(
-                            Icons.keyboard_arrow_down,
-                            color: Colors.white,
-                          )
+                          Icon(Icons.keyboard_arrow_down, color: Colors.white),
                         ],
                       ),
                       Text(
                         "Santander Elite Master",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                        style: TextStyle(color: Colors.white),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             "Limite disponível",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
+                            style: TextStyle(color: Colors.white),
                           ),
                           Text(
                             "R\$ 5.000,00",
@@ -367,12 +346,7 @@ class _DashboardState extends State<Dashboard> {
                         ],
                       ),
                       Divider(),
-                      Text(
-                        "Ver fatura",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
+                      Text("Ver fatura", style: TextStyle(color: Colors.white)),
                     ],
                   ),
                 ),
@@ -384,17 +358,11 @@ class _DashboardState extends State<Dashboard> {
               alignment: Alignment.center,
               width: double.maxFinite,
               decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.red,
-                  ),
-                  borderRadius: BorderRadius.circular(5)),
-              child: Text(
-                "Cartão Online",
-                style: TextStyle(
-                  color: Colors.red,
-                ),
+                border: Border.all(color: Colors.red),
+                borderRadius: BorderRadius.circular(5),
               ),
-            )
+              child: Text("Cartão Online", style: TextStyle(color: Colors.red)),
+            ),
           ],
         ),
       ),
