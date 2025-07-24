@@ -1,3 +1,4 @@
+import 'package:app_santander/views/revisao_pix.dart';
 import 'package:flutter/material.dart';
 
 class DefinirTransferencia extends StatefulWidget {
@@ -205,9 +206,7 @@ class _DefinirTransferenciaState extends State<DefinirTransferencia> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => DefinirTransferencia(),
-                      ),
+                      MaterialPageRoute(builder: (context) => RevisaoPix()),
                     );
                   },
                   child: Container(
